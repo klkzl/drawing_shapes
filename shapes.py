@@ -19,4 +19,14 @@ class Rectangle(Shape):
         self.height = height
 
     def is_point_included(self, x, y):
-        return x >= self.pos_x and x < self.pos_x + self.width and y >= self.pos_y and y < self.pos_y + self.height
+        return x >= self.pos_x and x < self.pos_x + self.width and \
+            y >= self.pos_y and y < self.pos_y + self.height
+
+
+class Square(Rectangle):
+    def __init__(self, x, y, length):
+        super().__init__(x, y, length, length)
+
+    # def is_point_included(self, x, y):
+    #     return x >= self.pos_x and x < self.pos_x + self.length and \
+    #         y >= self.pos_y and y < self.pos_y + self.length
