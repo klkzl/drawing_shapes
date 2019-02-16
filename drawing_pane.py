@@ -10,6 +10,6 @@ class ConsoleDrawingPane:
                 symbol = '-'
                 for shape in self.shapes:
                     if shape.is_point_included(x, y):
-                        symbol = 'P'
+                        symbol = shape.color
                 print(symbol, end='')
             print()

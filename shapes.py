@@ -1,23 +1,25 @@
 class Shape:
-    def __init__(self, x, y):
+    def __init__(self, x, y, color='X'):
         self.pos_x = x
         self.pos_y = y
+        self.color = color
 
     def is_point_included(self, x, y):
         raise NotImplementedError()
 
 
 class Point(Shape):
-    def __init__(self, x, y):
-        super().__init__(x, y)
+    def __init__(self, x, y, color='X'):
+        super().__init__(x, y, color)
+        self.color = color
 
     def is_point_included(self, x, y):
         return x == self.pos_x and y == self.pos_y
 
 
 class Rectangle(Shape):
-    def __init__(self, x, y, width, height):
-        super().__init__(x, y)
+    def __init__(self, x, y, width, height, color='X'):
+        super().__init__(x, y, color)
         self.width = width
         self.height = height
 
@@ -27,13 +29,13 @@ class Rectangle(Shape):
 
 
 class Square(Rectangle):
-    def __init__(self, x, y, length):
-        super().__init__(x, y, length, length)
+    def __init__(self, x, y, length, color='X'):
+        super().__init__(x, y, length, length, color)
 
 
 class Circle(Shape):
-    def __init__(self, x, y, radius):
-        super().__init__(x, y)
+    def __init__(self, x, y, radius, color='X'):
+        super().__init__(x, y, color)
         self.radius = radius
 
     def is_point_included(self, x, y):
