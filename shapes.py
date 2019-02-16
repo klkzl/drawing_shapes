@@ -10,3 +10,13 @@ class Point(Shape):
 
     def is_point_included(self, x, y):
         return x == self.pos_x and y == self.pos_y
+
+
+class Rectangle(Shape):
+    def __init__(self, x, y, width, height):
+        super().__init__(x, y)
+        self.width = width
+        self.height = height
+
+    def is_point_included(self, x, y):
+        return x >= self.pos_x and x < self.pos_x + self.width and y >= self.pos_y and y < self.pos_y + self.height
