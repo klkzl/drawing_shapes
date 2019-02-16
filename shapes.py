@@ -7,6 +7,10 @@ class Shape:
     def is_point_included(self, x, y):
         raise NotImplementedError()
 
+    def move(self, on_x, on_y):
+        self.pos_x += on_x
+        self.pos_y += on_y
+
 
 class Point(Shape):
     def __init__(self, x, y, color='X'):

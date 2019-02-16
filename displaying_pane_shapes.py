@@ -11,4 +11,11 @@ pane.shapes = [
     Circle(20, 5, 2, 'C')
 ]
 
+# before moving
+pane.draw()
+
+pane.shapes[2].move(1,1)
+pane.shapes[4].move(2, 1)
+
+# after moving
 pane.draw()
